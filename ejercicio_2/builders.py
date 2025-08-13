@@ -18,11 +18,11 @@ class BuilderPDF(Builder):
     def añadir_portada(self, cliente: str, logotipo: str):
         self._reporte.añadir(f"Portada de {cliente}, {logotipo}")
         
-    def añadir_graficos(self):
-        self._reporte.añadir("Gráficos de reporte")
+    def añadir_graficos(self, cliente: str):
+        self._reporte.añadir(f"Gráficos de reporte para {cliente}")
         
-    def añadir_tabla_movimientos(self):
-        self._reporte.añadir("Tabla de Movimientos")
+    def añadir_tabla_movimientos(self, cliente: str):
+        self._reporte.añadir(f"Tabla de Movimientos para {cliente}")
         
     def añadir_analisis_tendencias(self, tendencias: list[int]):
         self._reporte.añadir(f"Análisis de Tendencias de {tendencias}")
@@ -32,6 +32,6 @@ class BuilderPDF(Builder):
         
     def get_reporte(self):
         reporte = '\n'.join(self._reporte.parts)
-        print(f"Reporte: \n{reporte}", end="\n")
+        print(f"Reporte en pdf: \n{reporte}", end="\n")
     
         

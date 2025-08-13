@@ -2,6 +2,9 @@ from abc import ABC, abstractmethod
 
 
 class Builder(ABC):
+    """
+    Clase abstracta usada para implementar los constructores concretos
+    """
     
     @property
     @abstractmethod
@@ -17,11 +20,11 @@ class Builder(ABC):
         pass
     
     @abstractmethod
-    def añadir_graficos(self):
+    def añadir_graficos(self, client: str):
         pass
     
     @abstractmethod
-    def añadir_tabla_movimientos(self):
+    def añadir_tabla_movimientos(self, cliente: str):
         pass
     
     @abstractmethod
